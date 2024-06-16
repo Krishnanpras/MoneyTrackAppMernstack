@@ -16,7 +16,7 @@ function App() {
   }, [refreshTransactions]); // useEffect now depends on refreshTransactions
 
   async function getTransactions() {
-    const response = await fetch("http://localhost:4030/api/transactions");
+    const response = await fetch("https://moneytrackappmernstack.onrender.com/api/transactions");
     return await response.json();
   }
 
@@ -25,7 +25,7 @@ function App() {
 
     const price = name.split(' ')[0];
 
-    fetch("http://localhost:4030/api/transaction", {
+    fetch("https://moneytrackappmernstack.onrender.com/api/transaction", {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({
